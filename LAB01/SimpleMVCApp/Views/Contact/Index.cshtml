@@ -1,0 +1,67 @@
+﻿@model SimpleMVCApp.Models.ContactViewModel;
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Contact Page</h2>
+
+<div class="container-fluid">
+    @using (Html.BeginForm())
+    {
+        <div class="list-group">
+            @Html.DropDownListFor(m => m.Topic, new List<SelectListItem>{
+              new SelectListItem{Text="Tư vấn"},
+              new SelectListItem{Text="Khiếu nại - Phản Ánh"},
+              new SelectListItem{Text= "Hợp tác với thegioididong"},
+              new SelectListItem{Text=  "Góp ý cải tiến"},
+          }, "Select Topic")
+        </div>
+
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@Html.LabelFor(m => m.Title)</span>
+            </div>
+            @Html.TextBoxFor(m => m.Title)
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">@Html.LabelFor(m => m.Content)</span>
+            </div>
+            @Html.TextAreaFor(m => m.Content)
+        </div>
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@Html.LabelFor(m => m.Fullname)</span>
+            </div>
+            @Html.TextBoxFor(m => m.Fullname)
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@Html.LabelFor(m => m.Email)</span>
+            </div>
+            @Html.TextBoxFor(m => m.Email)
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@Html.LabelFor(m => m.Phone)</span>
+            </div>
+            @Html.TextBoxFor(m => m.Phone)
+        </div>
+
+
+        <button class="btn-outline-success" type="submit" value="Submit" title="SUBMIT">SUBMIT</button>
+
+    }
+</div>
+
+
+
+
